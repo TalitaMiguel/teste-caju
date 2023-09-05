@@ -14,16 +14,19 @@
     
 
 ### Link Postman
-https://documenter.getpostman.com/view/21551971/VVJ6xE4p
+[https://documenter.getpostman.com/view/21551971/VVJ6xE4p](https://documenter.getpostman.com/view/21552246/2s9YBxYbKJ)
 
-<h2 align="center"> 
 
- 👩🏻‍💻Desenvolvedora: 
-
-</h2>
-<table align="center">
+<table align="left">
   <tr>
-    </td> <td align="center"><a href="https://github.com/TalitaMiguel"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62106501?v=4" width="100px;" alt=""/><br /><sub><b>Talita Leonardo Miguel</b></sub></a><br />
+    <td align="center">
+      <h2 align="center"> 👩🏻‍💻Desenvolvedora:</h2>
+      <a href="https://github.com/TalitaMiguel">
+        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62106501?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Talita Leonardo Miguel</b></sub>
+      </a>
+      <br />
     </td> 
   </tr>
 </table>
