@@ -9,7 +9,7 @@
   
 ### Endpoints:
   - Get All Accounts - lista todas as contas do sistema;
-  - Get Account By ID or Merchant - Filtra conta por seu ID ou pelo nome da empresa;
+  - Get Account By ID or Merchant - Filtra conta por seu ID ou pelo nome do estabelecimento;
   - Post new Transaction - para fazer uma transação. 
     
 
