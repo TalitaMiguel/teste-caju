@@ -13,9 +13,40 @@ export const postTransaction = async (
     const balanceType: "food" | "meal" | "cash" = balanceIdentifier(mcc);
     const transactionId: string = shortid.generate();
 
+    // Validação das informações recebidas
+    if (!accountId || !amount || !merchant || !mcc) {
+      res.statusCode = 422;
+      throw new Error("Necessário informar todos os campos.");
+    }
+
+    // Validação do ID 
     const accountIndex: number = accounts.findIndex(
       (account) => account.accountId === accountId
     );
+
+    if (accountIndex < 0) {
+      res.statusCode = 404;
+      throw new Error("ID não encontrado.");
+    }
+
+    // Validação se o nome do estabelecimento é o mesmo do ID da conta. 
+    const checkMerchant: number = accounts.findIndex((account) => {
+      if (accountIndex >= 0) {
+        return (
+          account.accountId === accountId &&
+          account.merchant === String(merchant).toLowerCase()
+        );
+      }
+    });
+
+    if (checkMerchant < 0) {
+      res.statusCode = 404;
+
+      throw new Error(
+        "Campos 'accountId' e  'merchant' devem ser do mesmo estabelecimento."
+      );
+    }
+
 
     const account: Account = accounts[accountIndex];
 
@@ -33,9 +64,12 @@ export const postTransaction = async (
 
       const newTransaction: Transaction = {
         transactionId,
+        accountId,
         amount: -amount,
         merchant,
+        mcc,
         statusTransaction: "Rejeitado",
+        reason: "Saldo insuficiente",
         description: `Débito de ${amount} no saldo ${balanceType} não efetuado.`,
       };
 
@@ -46,8 +80,10 @@ export const postTransaction = async (
     // Transação Aprovada
     const newTransaction: Transaction = {
       transactionId,
+      accountId,
       amount: -amount,
       merchant,
+      mcc,
       statusTransaction: "Aprovado",
       description: `Débito de ${amount} no saldo ${balanceType} efetuado.`,
     };

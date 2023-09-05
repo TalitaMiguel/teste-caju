@@ -1,7 +1,10 @@
 export type Transaction = {
   transactionId: string | number;
+  accountId: string | number;
   amount: string | number;
   merchant: string;
+  mcc: number;
+  reason?: string;
   description: string;
   statusTransaction: string;
 };

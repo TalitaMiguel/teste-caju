@@ -2,7 +2,7 @@ import { Account } from "../types/account";
 import { accounts } from "../data/accounts";
 import { Request, Response } from "express";
 
-// Pesquisa uma conta por ID
+// Pesquisa uma conta por ID ou Merchant
 export const getAccountByIdOrMerchant = async (
   req: Request,
   res: Response
