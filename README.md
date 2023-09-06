@@ -14,7 +14,7 @@
     
 
 ### Link Postman
-[https://documenter.getpostman.com/view/21551971/VVJ6xE4p](https://documenter.getpostman.com/view/21552246/2s9YBxYbKJ)
+https://documenter.getpostman.com/view/21552246/2s9YBxYbKJ
 
 
 <table align="left">
