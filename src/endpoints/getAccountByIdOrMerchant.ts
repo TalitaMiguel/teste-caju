@@ -12,7 +12,7 @@ export const getAccountByIdOrMerchant = async (
 
     if (!id && !merchant) {
       res.statusCode = 422;
-      throw new Error("Verifique as entradas, informações ausentes.");
+      throw new Error("Informe 'ID' ou 'Merchante'.");
     }
 
     const valueParams: string | number =

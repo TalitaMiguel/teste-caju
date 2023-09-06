@@ -16,10 +16,10 @@ export const postTransaction = async (
     // Validação das informações recebidas
     if (!accountId || !amount || !merchant || !mcc) {
       res.statusCode = 422;
-      throw new Error("Necessário informar todos os campos.");
+      throw new Error("Necessário informar todos os parâmetros.");
     }
 
-    // Validação do ID 
+    // Validação do ID
     const accountIndex: number = accounts.findIndex(
       (account) => account.accountId === accountId
     );
@@ -29,7 +29,7 @@ export const postTransaction = async (
       throw new Error("ID não encontrado.");
     }
 
-    // Validação se o nome do estabelecimento é o mesmo do ID da conta. 
+    // Validação se o nome do estabelecimento é o mesmo do ID da conta.
     const checkMerchant: number = accounts.findIndex((account) => {
       if (accountIndex >= 0) {
         return (
@@ -46,7 +46,6 @@ export const postTransaction = async (
         "Campos 'accountId' e  'merchant' devem ser do mesmo estabelecimento."
       );
     }
-
 
     const account: Account = accounts[accountIndex];
 
